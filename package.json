@@ -11,12 +11,14 @@
   "author": "Aditya Veer",
   "license": "ISC",
   "dependencies": {
+    "@partical/particaljs": "^0.0.1",
     "axios": "^0.27.2",
     "body-parser": "^1.20.0",
     "cookie-parser": "^1.4.6",
     "cors": "^2.8.5",
     "express": "^4.18.1",
-    "iron-session": "^6.1.3"
+    "iron-session": "^6.1.3",
+    "tslib": "^2.4.0"
   },
   "devDependencies": {
     "nodemon": "^2.0.19"

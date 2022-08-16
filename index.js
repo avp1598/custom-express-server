@@ -1,5 +1,5 @@
 import express from "express";
-import { Client } from "@partical2.0/particaljs";
+import { Client } from "@partical/particaljs";
 import bodyParser from "body-parser";
 import cors from "cors";
 import cookieParser from "cookie-parser";
