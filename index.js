@@ -4,6 +4,9 @@ import bodyParser from "body-parser";
 import cors from "cors";
 import cookieParser from "cookie-parser";
 
+import Cryptr from "cryptr";
+const cryptr = new Cryptr("myTotallySecretKey");
+
 const app = express();
 const port = 3000;
 app.use(bodyParser.json({ limit: "8mb" }));
@@ -11,26 +14,17 @@ app.use(bodyParser.urlencoded({ limit: "8mb", extended: false }));
 app.use(cors({ credentials: true, origin: "https://localhost:3000" }));
 app.use(cookieParser());
 
-app.post("/", async (req, res) => {
-  const client = new Client("https://shared.partical.xyz/server1");
+const partical_client = "YOUR_PARTICAL_CLIENT_URL";
+
+app.get("/profile", async (req, res) => {
+  const client = new Client(partical_client);
   const user = await client.isAuthenticated(req);
   console.log({ user });
-  // const data = await client.createDB(req, "Page", req.body);
-  // console.log(data.data);
-  // res.send(data.data);
   res.json({ user });
 });
 
-app.post("/create", async (req, res) => {
-  const client = new Client("https://shared.partical.xyz/server1");
-  const data = await client.createDB(req, "page", req.body);
-  console.log(data.data);
-  res.send(data.data);
-});
-
 app.get("/", async (req, res) => {
-  // console.log("a");
-  res.send("Hello World7!");
+  res.send("Hello World!");
 });
 
 app.listen(port, () => {
