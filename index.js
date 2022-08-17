@@ -14,7 +14,7 @@ app.use(bodyParser.urlencoded({ limit: "8mb", extended: false }));
 app.use(cors({ credentials: true, origin: "https://localhost:3000" }));
 app.use(cookieParser());
 
-const partical_client = "";
+const partical_client = "_";
 
 app.get("/", async (req, res) => {
   res.send("Hello World!");
