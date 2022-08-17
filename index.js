@@ -30,7 +30,7 @@ app.post("/create", async (req, res) => {
 
 app.get("/", async (req, res) => {
   // console.log("a");
-  res.send("Hello World1!");
+  res.send("Hello World2!");
 });
 
 app.listen(port, () => {
